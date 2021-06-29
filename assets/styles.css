@@ -1,0 +1,93 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+:root {
+    --question-color: rgb(68, 4, 68);
+    --answer-correct-color: green;
+    --answer-incorrect-color: red;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--question-color);
+}
+
+body.correct {
+    color: var(--answer-correct-color);
+}
+
+body.incorrect {
+    color: var(--answer-incorrect-color);
+}
+
+.container {
+    width: 600px;
+    max-width: 100%;
+    background-color: rgb(233, 156, 233);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn {
+    background-color: var(--question-color);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color:white;
+    outline: none;
+}
+
+.btn-correct {
+  background-color: var(--answer-correct-color);
+}
+
+.btn-incorrect {
+    background-color: var(--answer-incorrect-color)
+}
+
+.start-btn, .next-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display:none;
+}
+
+.ranking {
+    display: none;
+    position: absolute;
+    top: 0;
+    color: white;
+}
+
+.rankingButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgb(233, 156, 233);
+    font-size: 30px;
+    color: white;
+}

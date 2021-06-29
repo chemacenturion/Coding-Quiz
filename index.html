@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles.css">
+    <title>Coding Quiz</title>
+</head>
+
+<!-- WHEN I answer a question incorrectly -->
+<!-- THEN time is subtracted from the clock -->
+<!-- WHEN all questions are answered or the timer reaches 0 -->
+<!-- THEN the game is over-->
+
+<body>
+    <div class ="container">
+        <div id="question-container" class="hide">
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="btn-grid">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
+        </div>
+<!-- WHEN I click the start button -->
+        <div class="controls">
+            <button id="start-btn" class="start-btn btn">Start</button>
+            <button id="next-btn" class="next-btn btn hide">Next</button>
+        </div>
+    </div>
+<!-- THEN a timer starts and I am presented with a question -->
+    <div class="timer"></div>
+<!-- WHEN the game is over -->
+<!-- THEN I can save my initials and my score -->
+    <div class="ranking">
+        <h1>👑 PLAYER RANKING 👑</h1>
+        <ul></ul>
+    </div>
+
+    <button class="rankingButton">
+        View High Scores
+    </button>
+
+    
+</body>
+
+<script src="./assets/script.js"></script>
+
+</html>
