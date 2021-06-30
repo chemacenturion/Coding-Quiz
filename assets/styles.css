@@ -91,3 +91,10 @@ body.incorrect {
     font-size: 30px;
     color: white;
 }
+
+.timer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color:white;
+}

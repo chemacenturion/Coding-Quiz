@@ -3,6 +3,8 @@ var nextBtn = document.getElementById('next-btn')
 var questionContainerElement = document.getElementById('question-container')
 var questionElement = document.getElementById('question')
 var answerButtonsElement = document.getElementById('answer-buttons')
+var count = 60;
+
 
 var questions = [
     {
@@ -66,6 +68,19 @@ nextBtn.addEventListener('click', () => {
  
 function startGame() {
     startBtn.classList.add('hide')
+// WHEN I answer a question incorrectly
+// THEN time is subtracted from the clock
+    var intID = setInterval(countdown, 1000);
+    var counter = document.querySelector("#time_remaining");
+    
+    function countdown() {
+        count--;
+        counter.textContent = "Time Remaining:" + count;
+        if(count===0) {
+            clearInterval(intID);
+            GameOverScreen();
+        }
+    }
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
@@ -111,7 +126,7 @@ function selectAnswer(e) {
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextBtn.classList.remove('hide')
     } else {
-        startBtn.innerText = 'Restart'
+        startBtn.innerText = 'Log Score'
         startBtn.classList.remove('hide')
     }
 }
@@ -122,6 +137,7 @@ function setStatusClass(element, correct) {
         element.classList.add('correct')
     }else{
         element.classList.add('incorrect')
+        count = count-1;
     }
 }
 
